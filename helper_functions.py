@@ -23,7 +23,7 @@ def display_board(board):
     print(board[1] + '|' + board[2] + '|' + board[3])
 
 #print the output
-display_board(['#','X','O','X','O','X','O','X','O','X'])
+# display_board(['#','X','O','X','O','X','O','X','O','X'])
 
 
 #Players' marker
@@ -42,7 +42,7 @@ def player_input():
 
 
 #tuple unpacking to get the marker of both player
-player1_marker, player2_marker = player_input()
+# player1_marker, player2_marker = player_input()
 
 #place marker
 def place_marker(board, marker, position):
@@ -74,7 +74,7 @@ def choose_first():
 
 # check position on board is empty or not
 def space_check(board, position):
-    return board[position] == ''
+    return board[position] == ' '
 
 # check full board is empty or not
 def full_board_check(board):
@@ -87,7 +87,8 @@ def full_board_check(board):
 def player_choice(board):
     position = 0
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
-        position = int(input('Choose next position from [1,9]'))
+        position = int(input('Choose your next position: (1-9) '))
+    
     return position
 
 # check player want to play again

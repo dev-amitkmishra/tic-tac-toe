@@ -24,7 +24,7 @@ while True:
 
             if helper_functions.win_check(board, player1_marker):
                 helper_functions.display_board(board)
-                print('Congratulations! You have won the game!')
+                print('Congratulations! Player 1 have won the game!')
                 game_on = False
             else:
                 if helper_functions.full_board_check(board):
@@ -36,8 +36,8 @@ while True:
         else:
             helper_functions.display_board(board)
             position = helper_functions.player_choice(board)
-            helper_functions.place_marker(board, player1_marker, position)
-            if helper_functions.win_check(board, player1_marker):
+            helper_functions.place_marker(board, player2_marker, position)
+            if helper_functions.win_check(board, player2_marker):
                 helper_functions.display_board(board)
                 print('Congratulations! Player 2 have won the game!')
                 game_on = False
