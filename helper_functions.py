@@ -1,8 +1,21 @@
 #create board with index
-from IPython.display import clear_output
+# from IPython.display import clear_output
+from os import system, name
+
+def clear(): 
+  
+    # for windows 
+    if name == 'nt': 
+        _ = system('cls') 
+  
+    # for mac and linux(here, os.name is 'posix') 
+    else: 
+        _ = system('clear') 
+
 
 def display_board(board):
-    clear_output()
+    # clear_output()
+    clear()
     print(board[7] + '|' + board[8] + '|' + board[9])
     print('-----')
     print(board[4] + '|' + board[5] + '|' + board[6])
@@ -18,11 +31,10 @@ def player_input():
     '''
     OUTPUT: (Player1, Player2)
     '''
-    
     marker = ''
-    
-    while marker != 'X' and marker != 'O':
-        marker = input('Player1: Choose X or O:  ').upper()
+
+    while not (marker == 'X' or marker == 'O'):
+        marker = input('Player 1: Do you want to be "X" or "O"? ').upper()
     if marker == 'X':
         return ('X', 'O')
     else:
@@ -37,9 +49,9 @@ def place_marker(board, marker, position):
     board[position] = marker
 
 # check whether new data is updating or not in board
-test_board = ['#','X','O','X','O','X','O','X','O','X']
-place_marker(test_board, '%', 5)
-display_board(test_board)
+# test_board = ['#','X','O','X','O','X','O','X','O','X']
+# place_marker(test_board, '%', 5)
+# display_board(test_board)
 
 #win check of any player
 def win_check(board, mark):
