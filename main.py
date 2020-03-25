@@ -11,3 +11,23 @@ def display_board(board):
 
 #print the output
 display_board(['#','X','O','X','O','X','O','X','O','X'])
+
+
+#Players' marker
+def player_input():
+    '''
+    OUTPUT: (Player1, Player2)
+    '''
+    
+    marker = ''
+    
+    while marker != 'X' and marker != 'O':
+        marker = input('Player1: Choose X or O:  ').upper()
+    if marker == 'X':
+        return ('X', 'O')
+    else:
+        return ('O', 'X')
+
+
+#tuple unpacking to get the marker of both player
+player1_marker, player2_marker = player_input()
